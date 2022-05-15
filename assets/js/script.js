@@ -3,21 +3,31 @@ var searchBarEl = document.querySelector("#searchBar");
 var forecastContainerEl = document.querySelector("#forecast-container");
 var temperatureEl = document.querySelector("#show-temperature");
 var windEl = document.querySelector("#wind");
-var humidity = document.querySelector("#humidity");
+var humidityEl = document.querySelector("#humidity");
+var apiKey = 'a41bbe96ed348f5aea3213a8cbc2f640'
 
-citiesStore = []
+citiesStored = []
 
 var citySubmitHandler = function(event) {
     event.preventDefault();
-    var searchBar = searchBarEl.ariaValueMax.trim();
+    var searchBar = searchBarEl.value.trim();
        
        if (searchBar) {
            getForecast(searchBar);
            searchBarEl.value = "";
        } else {
            alert("Enter a valid city name");
-       }
+       };
 };
+
+var saveCitiesStored = function(event) {
+    localStorage.setitem ("city", JSON.stringify(citiesStored));
+    console.log(event)
+    citiesStored.push(cityText);
+};
+var showHistory = function(saveCitiesStored) {
+    saveCitiesStored = JSON.parse(localStorage.getItem(city));
+}
 
 var getForecast = function(city) {
     // * Need request to the url here
@@ -41,24 +51,27 @@ var getForecast = function(city) {
     });
 } else {
     alert ("error" + response.statusText);
+
 }
-}) 
+})
 .catch(function(error) {
     alert("Unable to connect");
 });
 
+
+};
+
+
 function displayForecast(fc, name, humidity, wind) {
-    var fahrenheit = Math.tound(((parselFloat(fc.main.temp)-273.15)*1.8)+32);
+    var fahrenheit = Math.round(((parseFloat(fc.main.temp)-273.15)*1.8)+32);
     var wind = Math.round(fc.wind.speed);
-    
+    var humidity = Math.round(fc.main.humidity);
     document.getElementById('subtitle').innerHTML = name;
-    document.getElementById('subtitle').innerHTML = fahrenheit + '&deg;';
-    document.getElementById('subtitle').innerHTML = wind + 'mph';
-    document.getElementById('subtitle').innerHTML = humidity + '%';
+    document.getElementById('show-temperature').innerHTML = fahrenheit + '&deg;';
+    document.getElementById('wind').innerHTML = wind + 'mph';
+    document.getElementById('humidity').innerHTML = humidity + '%';
     
 
-}
-
-}
-
+};
+    
 cityFormEl.addEventListener("submit", citySubmitHandler);

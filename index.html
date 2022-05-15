@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel= "stylesheet" href="./assets/css/style.css"/>
     <title>Whats The Weather</title>
 </head>
@@ -13,49 +14,58 @@
     </header>
 
 <main class="row justify-space-between"></main>
-     <div class="card col-3">/</div>
-     <h2 class= "card-header"> Enter the city's name:</h2>
+     <div class="card col-3"></div>
+     <h2 class= "card-header"> Enter the city's name Below</h2>
      <form id = "city-form" class = "card-body">
          <input id="searchBar" type = "text" class = "form-input" />
-         <button type = "submit" class = "btn" id = "searchBtn"></button>
+         <button type = "submit" class = "btn" id = "searchBtn">Enter</button>
      </form>
+
+<div class = "card col-10">
+<h3> Today's Weather: <span id ="subtitle"></spam></h3>
+    <div id = "forecase-container" class = "list-group"></div>
+    <div id = "breakdown"></div>
+    <p>Temperature: <span class="temperature" id = "show-temperature"></span></p>
+    <p>Wind: <span id = "wind"></span></p>
+    <p>Humidity: <span id = "humidity"></span></p>
+</div>
 </main>
 
-<h3 class = "fc-title"> Weekly Forecast:</h3>
+<h4 class = "fc-title"> Weekly Forecast:</h4>
      <div class = "card 5-container"></div>
      
      <div class = "row justify-space-between">
          <div class = "card col-2">
-         <h4 Date:></h4>
-             <p>Temperature: <span class="Temperature" id = "show-temp"></span></p>
+         <h5 date:></h5>
+             <p>Temperature: <span class="Temperature" id = "show-temperature"></span></p>
              <p>Wind: <span id = "wind"></span></p>
              <p>Humidity: <span id = "humidity"></span></p>
      </div>
 
      <div class = "card col-2">
-        <h4 Date:></h4>
-            <p>Temperature: <span class="Temperature" id = "show-temp"></span></p>
+        <h5 date:></h5>
+            <p>Temperature: <span class="Temperature" id = "show-temperature"></span></p>
             <p>Wind: <span id = "wind"></span></p>
             <p>Humidity: <span id = "humidity"></span></p>
      </div>
 
      <div class = "card col-2">
-        <h4 Date:></h4>
-            <p>Temperature: <span class="Temperature" id = "show-temp"></span></p>
+        <h5 date:></h5>
+            <p>Temperature: <span class="Temperature" id = "show-temperature"></span></p>
             <p>Wind: <span id = "wind"></span></p>
             <p>Humidity: <span id = "humidity"></span></p>
      </div>
 
      <div class = "card col-2">
-        <h4 Date:></h4>
-            <p>Temperature: <span class="Temperature" id = "show-temp"></span></p>
+        <h5 date:></h5>
+            <p>Temperature: <span class="Temperature" id = "show-temperature"></span></p>
             <p>Wind: <span id = "wind"></span></p>
             <p>Humidity: <span id = "humidity"></span></p>
      </div>
 
      <div class = "card col-2">
-        <h4 Date:></h4>
-            <p>Temperature: <span class="Temperature" id = "show-temp"></span></p>
+        <h5 date:></h5>
+            <p>Temperature: <span class="Temperature" id = "show-temperature"></span></p>
             <p>Wind: <span id = "wind"></span></p>
             <p>Humidity: <span id = "humidity"></span></p>
      </div>
@@ -68,8 +78,8 @@
 
 
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="./assets/js/script.js"></script>
 
 </body>
