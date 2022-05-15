@@ -38,3 +38,12 @@
     background-color: skyblue;
 }
 
+.form-input {
+    width: 100%;
+    margin-bottom: auto;
+}
+
+.fc-title {
+    padding-left: 15px;
+}
+
